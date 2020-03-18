@@ -1,0 +1,55 @@
+{
+    "name": "laravel-creative/jquery-actions",
+    "description": "Laravel Built In Php Jquery Functions, no need to write jquery code",
+    "keywords": [
+        "laravel-creative",
+        "jquery-actions"
+    ],
+    "homepage": "https://github.com/laravel-creative/jquery-actions",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Mustafa Khaled",
+            "email": "mustafakhaled.dev@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.*|| 5.6.* || 5.7.* || 6.* || 7.*",
+        "jeremeamia/superclosure": "^2.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelCreative\\JqueryActions\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaravelCreative\\JqueryActions\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelCreative\\JqueryActions\\JqueryActionsServiceProvider"
+            ],
+            "aliases": {
+                "JqueryActions": "LaravelCreative\\JqueryActions\\JqueryActionsFacade"
+            }
+        }
+    }
+}
