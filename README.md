@@ -43,9 +43,10 @@ when the user click the ``Say Hello`` button , an ajax request will go to secure
 * Ok Great , but i want to run the function from controller ?
 <br>
 Then you have to mention the controller and the actions like this.
-```html
+```php
 <button {{JqueryAction::onClick('app\Http\Controllers\HomeController@sayHello')}}>Say Hello</button>
 ```
+ 
 * that`s awesome, but i want to use custom url
 <br>
 then you can use ``$options`` array to make the magic.
