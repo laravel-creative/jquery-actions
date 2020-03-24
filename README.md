@@ -14,6 +14,24 @@ You can install the package via composer:
 ```bash
 composer require laravel-creative/jquery-actions
 ```
+
+[jQuery Actions](#usage)  
+* [onClick()](#usage)  
+* [on()](#on)  
+* [static()](#static)  
+* [jqueryForm()](#form)  
+* [$options array](#options) 
+  
+[JqueryHelpers](#jqueryhelpers)  
+* [append()](#append)  
+* [remove()](#remove)  
+* [hide()](#hide)  
+* [show()](#show)  
+* [html()](#html)  
+* [console()](#console)  
+* [alerts()](#alerts)  
+ 
+
 ## requires
 This package requires ``jquery
                        and jquery-confirm``
@@ -25,17 +43,21 @@ This package requires ``jquery
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 ```
 
+<a name="usage"/>
+
 ## Usage
 ### jQuery Actions
 Jquery actions is static class with ``facades`` you can use it on ``laravel blades`` to do the magic. <br>
 all functions are based on jquery ajax and secured hashed urls , of course you can use your own ``routes``
+ 
+ <a name="usage"/>
 
 #### onClick()
 ```php 
 JqueryAction::onClick($function, $options = [])
 ```
 when you use this function in blades like this and don`t forget to add ``@jqueryScripts`` blade directive in the end of your file after jquery scripts.
-```html
+```php
 <button {{JqueryAction::onClick(function($request){ echo 'Hello'; })}}>Say Hello</button>
 ```
 when the user click the ``Say Hello`` button , an ajax request will go to secured hashed url and the response will be ``Hello``
@@ -43,11 +65,14 @@ when the user click the ``Say Hello`` button , an ajax request will go to secure
 * Ok Great , but i want to run the function from controller ?
 <br>
 Then you have to mention the controller and the actions like this.
-```html
+```
 <button {{JqueryAction::onClick('app\Http\Controllers\HomeController@sayHello')}}>Say Hello</button>
 ```
+ 
 * that`s awesome, but i want to use custom url
 <br>
+<a name="options"/>
+
 then you can use ``$options`` array to make the magic.
 ```php
 $options = [
@@ -73,6 +98,7 @@ so for custom urls your code would be like this
 
 * all methods work the same way as function and options
 
+<a name="on"/>
 
 #### on()
 ```php
@@ -87,6 +113,8 @@ you can use the same with this package.
     ])}}>Say Hello</button>
 ```
 with all ``onClick()`` magic too. you can use all html attributes on the first parameter
+<a name="static"/>
+
 
 #### static()
 ```php
@@ -103,6 +131,7 @@ you can use the same with this method. its ajax too.
     'method'=>'POST'
     ])}}
 ```
+<a name="form"/>
 
 #### jqueryForm()
 you can do the magic with forms too.
@@ -127,6 +156,8 @@ then add your fields and close the form
 ```html
   {!! JqueryAction::closeForm() !!}
 ```
+<a name="jqueryhelpers"/>
+
 ### JqueryHelpers
 You saw those keys in ``$options`` array above 
 ```
@@ -143,7 +174,8 @@ how can you use them.
 'onLoadCallback'=>'alert("loading..")',
 ```
  2-or you can use our ``jqueryHelper`` functions.
- 
+ <a name="append"/>
+
 #### append($selector, $openTag, $msg, $closedTag)
 uses jquery ``append`` function
 ```
@@ -152,30 +184,35 @@ uses jquery ``append`` function
 'onLoadCallback'=>jqueryHelper::append("#status",'<p>','Loading....','</p>'), 
 ```
 you can use ``{data}`` to access javascript data object ``{data.msg}``
+<a name="remove"/>
 
 #### remove($selector)
 uses jquery ``remove`` method to remove element 
 ```
 'jquerySuccessCallback'=>jqueryHelper::remove("#loading"),  
 ```
+<a name="hide"/>
 
 #### hide($selector)
  ```
 'jquerySuccessCallback'=>jqueryHelper::hide("#loading"),  
 ```
 
+<a name="show"/>
 
 #### show($selector)
  ```
 'onLoadCallback'=>jqueryHelper::show("#loading"),  
 ```
 
+<a name="html"/>
 
 #### html($selector,$msg)
 change element html
 ```
 'jquerySuccessCallback'=>jqueryHelper::html("#msg",'Success'),  
 ```
+<a name="console"/>
 
 #### console($msg)
 write to the console
@@ -192,6 +229,7 @@ so the result would be
 ```javascript
 $('#text').html(data.text);
 ```
+<a name="alerts"/>
 
 
 #### jqueryAlert($title, $msg)
