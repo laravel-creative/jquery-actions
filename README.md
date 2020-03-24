@@ -26,7 +26,7 @@ This package requires ``jquery
 ```
 
 ## Usage
-###jQuery Actions
+### jQuery Actions
 Jquery actions is static class with ``facades`` you can use it on ``laravel blades`` to do the magic. <br>
 all functions are based on jquery ajax and secured hashed urls , of course you can use your own ``routes``
 
@@ -35,7 +35,7 @@ all functions are based on jquery ajax and secured hashed urls , of course you c
 JqueryAction::onClick($function, $options = [])
 ```
 when you use this function in blades like this and don`t forget to add ``@jqueryScripts`` blade directive in the end of your file after jquery scripts.
-```blade
+```html
 <button {{JqueryAction::onClick(function($request){ echo 'Hello'; })}}>Say Hello</button>
 ```
 when the user click the ``Say Hello`` button , an ajax request will go to secured hashed url and the response will be ``Hello``
@@ -43,7 +43,7 @@ when the user click the ``Say Hello`` button , an ajax request will go to secure
 * Ok Great , but i want to run the function from controller ?
 <br>
 Then you have to mention the controller and the actions like this.
-```blade
+```html
 <button {{JqueryAction::onClick('app\Http\Controllers\HomeController@sayHello')}}>Say Hello</button>
 ```
 * that`s awesome, but i want to use custom url
@@ -63,7 +63,7 @@ $options = [
 
 so for custom urls your code would be like this
 
-```blade
+```html
     <button {{JqueryAction::onClick(null,[
     'url'=>route('name'),
     'method'=>'POST'
@@ -80,7 +80,7 @@ JqueryAction::on($attribute,$function,$options=[])
 ```
 in javascript you can use ``$('#id').on('onmouseenter',function(e){})`` to run a method when mouse enter div with id  ``#id``
 you can use the same with this package.
-```blade
+```html
     <button {{JqueryAction::on('onmouseenter',null,[
     'url'=>route('name'),
     'method'=>'POST'
@@ -97,7 +97,7 @@ You can make your own static javascript function without inline tag method,
 in javascript you can use ``$('#id').on('hover',function(e){})`` to run a method when mouse hover a div with id  ``#id``
 you can use the same with this method. its ajax too.
 
-```blade
+```html
 {{JqueryAction::static('#id','hover',null,[
     'url'=>route('name'),
     'method'=>'POST'
@@ -108,7 +108,7 @@ you can use the same with this method. its ajax too.
 you can do the magic with forms too.
 <br>
 start your form tag
-```blade
+```html
   {{JqueryAction::jqueryForm(function (\Illuminate\Http\Request $request){
       $post=new \App\Post();
     $post->text=$request->text;
@@ -124,7 +124,7 @@ start your form tag
 ```
 then add your fields and close the form
 
-```blade
+```html
   {!! JqueryAction::closeForm() !!}
 ```
 ### JqueryHelpers
