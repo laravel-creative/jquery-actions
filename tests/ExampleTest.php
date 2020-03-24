@@ -1,18 +1,18 @@
 <?php
 
-namespace LaravelCreative\JqueryActions\Tests;
+namespace LaravelCreative\JqueryAction\Tests;
 
 use Orchestra\Testbench\TestCase;
-use LaravelCreative\JqueryActions\JqueryActionsServiceProvider;
+use LaravelCreative\JqueryAction\JqueryActionServiceProvider;
 
 class ExampleTest extends TestCase
 {
 
     protected function getPackageProviders($app)
     {
-        return [JqueryActionsServiceProvider::class];
+        return [JqueryActionServiceProvider::class];
     }
-    
+
     /** @test */
     public function true_is_true()
     {

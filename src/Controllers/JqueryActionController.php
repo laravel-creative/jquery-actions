@@ -1,5 +1,5 @@
 <?php
-namespace LaravelCreative\JqueryActions\Controllers;
+namespace LaravelCreative\JqueryAction\Controllers;
 
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -30,7 +30,7 @@ class JqueryActionController extends  BaseController {
             }
             return $originalCode($request);
         }else{
-           return abort(500,'Function Code is expired');
+           return abort(500,'Function callback is unavailable');
         }
 
     }

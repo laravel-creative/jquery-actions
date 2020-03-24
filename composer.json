@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "LaravelCreative\\JqueryActions\\": "src"
+            "LaravelCreative\\JqueryAction\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "LaravelCreative\\JqueryActions\\Tests\\": "tests"
+            "LaravelCreative\\JqueryAction\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -45,10 +45,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LaravelCreative\\JqueryActions\\JqueryActionsServiceProvider"
+                "LaravelCreative\\JqueryAction\\JqueryActionServiceProvider"
             ],
             "aliases": {
-                "JqueryActions": "LaravelCreative\\JqueryActions\\JqueryActionsFacade"
+                "JqueryAction": "LaravelCreative\\JqueryAction\\JqueryActionFacade"
             }
         }
     }

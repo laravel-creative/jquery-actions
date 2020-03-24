@@ -1,13 +1,13 @@
 <?php
 
-namespace LaravelCreative\JqueryActions;
+namespace LaravelCreative\JqueryAction;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \LaravelCreative\JqueryActions\Skeleton\SkeletonClass
+ * @see \LaravelCreative\JqueryAction\Skeleton\SkeletonClass
  */
-class JqueryActionsFacade extends Facade
+class JqueryActionFacade extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -16,6 +16,6 @@ class JqueryActionsFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'jquery-actions';
+        return 'jquery-action';
     }
 }

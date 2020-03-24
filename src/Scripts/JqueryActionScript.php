@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelCreative\JqueryActions;
+namespace LaravelCreative\JqueryAction\Scripts;
 
 use http\Exception;
 use Illuminate\Support\Facades\Cache;
@@ -20,6 +20,9 @@ class JqueryActionScript
     public $jquerySuccessCallback;
     public $jqueryErrorCallback;
     public $selector;
+    public $onLoad;
+    public $url;
+    public $method;
 
     /**
      * JqueryActionScript constructor.
@@ -32,7 +35,7 @@ class JqueryActionScript
      * @param $jqueryErrorCallback
      * @param $selector
      */
-    public function __construct($jqueryFunction, $jqueryMethod, $hashedCode, $secondHashedCode, $onetime, $jquerySuccessCallback, $jqueryErrorCallback, $selector=null)
+    public function __construct($url, $method, $jqueryFunction, $jqueryMethod, $hashedCode, $secondHashedCode, $onetime, $jquerySuccessCallback, $jqueryErrorCallback, $onLoad = null, $selector = null)
     {
         $this->jqueryFunction = $jqueryFunction;
         $this->jqueryMethod = $jqueryMethod;
@@ -42,15 +45,20 @@ class JqueryActionScript
         $this->jquerySuccessCallback = $jquerySuccessCallback;
         $this->jqueryErrorCallback = $jqueryErrorCallback;
         $this->selector = $selector;
+        $this->onLoad = $onLoad;
+        $this->url = $url;
+        $this->method = $method;
     }
 
 
     /**
+     * render script
      * @return mixed
      */
-    public function render(){
+    public function render()
+    {
 
-         return view('jquery-actions::script',['script'=>$this]);
+        return view('jquery-actions::script', ['script' => $this]);
     }
 
 }
