@@ -1,11 +1,11 @@
 {
     "name": "laravel-creative/jquery-actions",
-    "description": "Laravel Built In Php Jquery Functions, no need to write jquery code",
+    "description": "Turn jQuery into magic with php",
     "keywords": [
         "laravel-creative",
         "jquery-actions"
     ],
-    "homepage": "https://github.com/laravel-creative/jquery-actions",
+    "homepage": "https://github.com/mustafakhaleddev/jquery-actions",
     "license": "MIT",
     "type": "library",
     "authors": [
